@@ -21,7 +21,7 @@
 ║    a3      Ladestand der Kopfstation in %                   ║
 ║    ab, c2  Solarleistung gesamt (W)                         ║
 ║    ac      Akkuleistung (W), negativ = Entladen             ║
-║    ad      Ausgangsleistung (W) = ab + ac                   ║
+║    ad      Ausgangsleistung (W) = ab - ac (ac<0 = Entladen) ║
 ║    c6..c9  die vier MPPT-Strings, Summe = ab                ║
 ║  Netzzaehler SHEM3 – Werte als u32, nicht float:            ║
 ║    a8      Netzbezug, a9 Einspeisung (Hundertstel-Watt)     ║
@@ -1950,7 +1950,7 @@ static bool parseParamInfo(const String& b64){
       switch(tag){
         case 0xab: solar=v; haveSolar=true; break;
         case 0xac: battW=v; break;  // negativ = Entladen (vom Nutzer bestaetigt)
-        case 0xad: outW =v; break;  // Ausgangsleistung: ab + |ac| ergibt genau ad
+        case 0xad: outW =v; break;  // Ausgangsleistung: ab - ac ergibt genau ad
         case 0xc6: str[0]=v; break;
         case 0xc7: str[1]=v; break;
         case 0xc8: str[2]=v; break;
