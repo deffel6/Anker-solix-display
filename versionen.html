@@ -54,6 +54,10 @@
   .links a.alt{border-color:#99999955;color:var(--dim)}
   .links a small{display:block;font-weight:400;font-size:.72rem;color:var(--dim)}
   a{color:var(--accent)}
+  code{
+    font-family:ui-monospace,Menlo,monospace;font-size:.85em;
+    background:#8881;border:1px solid var(--line);border-radius:5px;padding:1px 5px;
+  }
   .kaffee{
     background:var(--card); border:1px solid #f0a50055;
     border-radius:14px; padding:18px 20px; margin-bottom:24px;
@@ -77,6 +81,8 @@
       <small>ohne Touch, mit Wetterseite</small></a>
     <a class="b" href="https://deffel6.github.io/anker-solix-display-2pro/">Solarbank 2 Pro
       <small>eigene Linie f&uuml;r die A17C1</small></a>
+    <a class="b" href="https://deffel6.github.io/anker-solix-display-2pro-beta/">2 Pro Beta
+      <small>Neues zuerst, daf&uuml;r ungetestet</small></a>
     <a class="alt" href="https://deffel6.github.io/Anker-Display-1.0.4/">Alte Fassung 1.0.4
       <small>Daten nur alle 5 Minuten</small></a>
     <a href="anleitung.html">Anleitung
@@ -295,9 +301,34 @@
   <div class="lane beta">Solarbank 2 Pro <span style="text-transform:none;letter-spacing:0">&ndash; eigene Linie f&uuml;r die A17C1</span></div>
 
   <div class="card">
-    <div class="vrow"><span class="vnum">2.2.0</span>
-      <span class="vdate">18. August 2026</span>
+    <div class="vrow"><span class="vnum">2.7.0</span>
+      <span class="vdate">24. August 2026</span>
       <span class="badge beta">Aktuell</span></div>
+    <p style="margin-bottom:8px"><strong style="color:var(--fg)">Das Entladen
+    ist entschl&uuml;sselt.</strong> Aus einem Mitschnitt am Abend: Feld
+    <code>b7</code> tr&auml;gt die Entladeleistung, <code>d3</code> die
+    Ausgangsleistung der Anlage. Damit stimmen Akkuleistung und Hausverbrauch
+    erstmals auch nach Sonnenuntergang.</p>
+    <p><a href="https://deffel6.github.io/anker-solix-display-2pro/">Installieren</a>
+    &middot; <a href="https://github.com/deffel6/anker-solix-display-2pro">Quelltext</a></p>
+  </div>
+
+  <div class="card">
+    <div class="vrow"><span class="vnum">2.8.0</span>
+      <span class="vdate">24. August 2026</span>
+      <span class="badge test">Beta</span></div>
+    <p style="margin-bottom:8px">Start der eigenen Testlinie f&uuml;r die
+    2 Pro. Unter der Uhr steht die Hauslast statt des Datums, und die
+    Update-Pr&uuml;fung schaut nur noch auf die beiden 2-Pro-Linien &ndash;
+    zuvor meldete sie Releases der 3-Pro-Linie. Neue Funktionen erscheinen ab
+    jetzt hier zuerst; gepr&uuml;ft ist die stabile Linie dar&uuml;ber.</p>
+    <p><a href="https://deffel6.github.io/anker-solix-display-2pro-beta/">Installieren</a>
+    &middot; <a href="https://github.com/deffel6/anker-solix-display-2pro-beta">Quelltext</a></p>
+  </div>
+
+  <div class="card">
+    <div class="vrow"><span class="vnum">2.2.0</span>
+      <span class="vdate">18. August 2026</span></div>
     <p style="margin-bottom:8px">Gleicher Funktionsumfang wie die Beta-Linie,
     aber auf die <strong style="color:var(--fg)">Solarbank 2 Pro</strong>
     zugeschnitten. Solarleistung, die vier Panel-Eing&auml;nge und der
