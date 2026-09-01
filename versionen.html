@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Anker Solix Display – Versionen</title>
+<script type="module"
+        src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js"></script>
 <style>
   :root{
     --bg:#0a0a0a; --card:#161616; --line:#2a2a2a;
@@ -54,6 +56,18 @@
   .links a.alt{border-color:#99999955;color:var(--dim)}
   .links a small{display:block;font-weight:400;font-size:.72rem;color:var(--dim)}
   a{color:var(--accent)}
+  .werkzeug{
+    background:var(--card); border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; margin-bottom:14px;
+  }
+  .werkzeug h3{font-size:1.05rem;margin-bottom:6px}
+  .werkzeug p{color:var(--dim);font-size:.92rem;margin-bottom:12px}
+  .werkzeug button{
+    font:600 .95rem/1 inherit; padding:13px 26px; cursor:pointer;
+    background:var(--accent); color:#000; border:none; border-radius:10px;
+  }
+  .werkzeug .hinweis{font-size:.82rem;color:var(--dim);margin:10px 0 0}
+  esp-web-install-button{--esp-tools-button-color:#000;}
   code{
     font-family:ui-monospace,Menlo,monospace;font-size:.85em;
     background:#8881;border:1px solid var(--line);border-radius:5px;padding:1px 5px;
@@ -87,6 +101,8 @@
       <small>Daten nur alle 5 Minuten</small></a>
     <a href="anleitung.html">Anleitung
       <small>Anzeige und Bedienung erkl&auml;rt</small></a>
+    <a class="alt" href="#wlan-scanner">WLAN-Scanner
+      <small>Werkzeug f&uuml;rs gleiche Board</small></a>
     <a href="https://github.com/deffel6/anker-solix-display/blob/main/CHANGELOG.md">&Auml;nderungsliste
       <small>alle Details auf GitHub</small></a>
   </div>
@@ -340,6 +356,34 @@
     Protokoll schreibt &ndash; zum Entschl&uuml;sseln der restlichen Werte.</p>
     <p><a href="https://deffel6.github.io/anker-solix-display-2pro/">Installieren</a>
     &middot; <a href="https://github.com/deffel6/anker-solix-display-2pro">Quelltext</a></p>
+  </div>
+
+  <!-- ══════════ WERKZEUGE ══════════
+       Kein Display-Release, sondern ein zweiter Sketch fuers selbe Board.
+       Der Installer-Knopf laedt das Manifest aus dem Scanner-Repo; die
+       Pfade darin sind absolut, damit das ueber Seitengrenzen hinweg geht. -->
+  <div class="lane" style="color:var(--dim)">Werkzeuge <span style="text-transform:none;letter-spacing:0">&ndash; laufen auf demselben Board</span></div>
+
+  <div class="werkzeug" id="wlan-scanner">
+    <h3>&#128246; WLAN-Scanner</h3>
+    <p>Zeigt alle geh&ouml;rten Netze auf dem runden Display &ndash; Name und
+    Signalst&auml;rke, nach St&auml;rke sortiert, versteckte eingeschlossen.
+    Dazu &ouml;ffnet er einen eigenen Zugangspunkt <strong>WLAN-Scanner</strong>:
+    im Browser ein Netz ausw&auml;hlen, Passwort eingeben, und das Ger&auml;t
+    meldet zur&uuml;ck, ob die Anmeldung geklappt hat &ndash; mit IP-Adresse
+    oder mit dem Grund der Ablehnung. N&uuml;tzlich, um vor dem Aufbau zu
+    pr&uuml;fen, ob das WLAN am geplanten Platz &uuml;berhaupt ankommt.</p>
+    <esp-web-install-button
+        manifest="https://deffel6.github.io/esp32-wlan-scanner/manifest.json">
+      <button slot="activate">WLAN-Scanner installieren</button>
+      <span slot="unsupported">Dieser Browser kann das nicht &mdash; bitte Chrome oder Edge.</span>
+      <span slot="not-allowed">Nur &uuml;ber HTTPS m&ouml;glich.</span>
+    </esp-web-install-button>
+    <p class="hinweis">Dasselbe Board wie das Display, nichts umzustecken &ndash;
+    das Anker-Display l&auml;sst sich jederzeit wieder aufspielen.
+    <a href="https://deffel6.github.io/esp32-wlan-scanner/">Eigene Seite</a>
+    &middot;
+    <a href="https://github.com/deffel6/esp32-wlan-scanner">Quelltext</a></p>
   </div>
 
   <!-- ══════════ ALTE LINIE ══════════ -->
